@@ -1,0 +1,71 @@
+{
+  "name": "prest-gen",
+  "version": "1.0.0",
+  "description": "pREST site generator",
+  "keywords": [
+    "pREST",
+    "javascript",
+    "typescript",
+    "jsonml",
+    "generator",
+    "site"
+  ],
+  "author": {
+    "name": "Peter Rybar",
+    "email": "pr.rybar@gmail.com",
+    "url": "http://prest-tech.appspot.com/peter-rybar"
+  },
+  "private": false,
+  "license": "GPL-3.0",
+  "scripts": {
+    "tslint": "tslint --project tsconfig.json",
+    "static": "cpx 'src/static/**/*.*' 'dist/' -u -v",
+    "static:watch": "npm run static -- -w",
+    "build": "ts-node src/main/index.ts",
+    "build:watch": "onchange 'src/main/**/*.ts' -v -- npm run build",
+    "workbox": "workbox",
+    "swim": "workbox inject:manifest; cp node_modules/workbox-sw/build/importScripts/workbox-sw.prod.v2.1.2.js dist/workbox-sw.js",
+    "swim:watch": "onchange 'src/**/*' -v -- npm run swim",
+    "clean": "rimraf dist/",
+    "clean:all": "npm run clean; rimraf node_modules",
+    "predist": "run-s clean tslint",
+    "dist": "run-s static build swim",
+    "dist:watch": "run-p -r static:watch build:watch",
+    "server": "http-server dist/",
+    "start": "run-p -r static:watch build:watch server",
+    "gh-pages:dist": "cpx './dist/**/!(*.map)' 'gh-pages/' -u -v",
+    "gh-pages:deploy": "git subtree push --prefix gh-pages origin gh-pages",
+    "gh-pages:undeploy": "git push origin --delete gh-pages; git branch -D gh-pages",
+    "deploy": "npm run gh-pages:undeploy; git checkout -b gh-pages && run-s dist gh-pages:dist && git add gh-pages && git commit -m gh-pages && npm run gh-pages:deploy && git checkout master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peter-rybar/prest-gen.git"
+  },
+  "pre-commit": [
+    "dist"
+  ],
+  "pre-push": [
+    "dist"
+  ],
+  "dependencies": {
+    "ts-node": "^3.3.0",
+    "workbox-sw": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.8.0",
+    "typescript": "^2.7.1",
+    "workbox-cli": "^2.1.2"
+  },
+  "prettier": {
+    "tabWidth": 4
+  }
+}

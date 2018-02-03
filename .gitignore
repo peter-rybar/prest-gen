@@ -1,0 +1,14 @@
+*.*~
+
+_*
+*_
+
+dist/
+build/
+tmp/
+
+node_modules/
+
+*.iml
+.idea
+.vscode

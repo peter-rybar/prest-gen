@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "lib": [
+            "es2017",
+            "es2015",
+            "dom",
+            "es6"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "strictNullChecks": false,
+        "declaration": false,
+        "sourceMap": true,
+        "inlineSourceMap": false,
+        "removeComments": true,
+        "outDir": "build"
+    },
+    "include": [
+        "src/main/index.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
+}
