@@ -45,7 +45,7 @@ export function appshell(title: string, title1: string, sidebar: JsonMLs, conten
             ["span.w3-bar-item.w3-right",
                 ["a",
                     {
-                        href: "https://github.com/peter-rybar/wallet-dct",
+                        href: "https://github.com/peter-rybar/prest-gen",
                         title: "github",
                         target: "_blank"
                     },
