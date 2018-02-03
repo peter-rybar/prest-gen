@@ -1,7 +1,7 @@
 {
   "name": "prest-gen",
   "version": "1.0.0",
-  "description": "pREST site generator",
+  "description": "pREST JsonML site generator",
   "keywords": [
     "pREST",
     "javascript",
