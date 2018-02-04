@@ -1,8 +1,11 @@
 
+import * as fs from "fs";
 import { JsonMLs } from "./prest/jsonml/jsonml";
 import { jsonmls2htmls, } from "./prest/jsonml/jsonml-html";
-import { appshell, sidebar, page, content } from "./components";
-import * as fs from "fs";
+import { page } from "./page";
+import { appshell } from "./appshell";
+import { sidebar } from "./sidebar";
+import { content } from "./content";
 
 function HTML(file: string, jsonmls: JsonMLs, pretty = false): void {
     const path = __dirname + "/../../dist/" + file;
@@ -12,13 +15,13 @@ function HTML(file: string, jsonmls: JsonMLs, pretty = false): void {
 }
 
 
-const site = "Site";
+const site = "Site Gen";
 
 HTML("index.html",
     page(site,
         appshell(site, "Index",
             sidebar(),
-            content("Index Title", "name 0")
+            content("Index Title", "name index")
         )
     ),
     true
@@ -28,7 +31,27 @@ HTML("views.html",
     page(site,
         appshell(site, "Views",
             sidebar(),
-            content("Views Title", "name 1")
+            content("Views Title", "name views")
+        )
+    ),
+    true
+);
+
+HTML("news.html",
+    page(site,
+        appshell(site, "News",
+            sidebar(),
+            content("News Title", "name news")
+        )
+    ),
+    true
+);
+
+HTML("settings.html",
+    page(site,
+        appshell(site, "Settings",
+            sidebar(),
+            content("Settings Title", "name settings")
         )
     ),
     true
