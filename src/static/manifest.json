@@ -1,7 +1,7 @@
 {
-  "name": "Wallet DCT",
-  "short_name": "Wallet DCT",
-  "description": "Wallet for DCT blockchain network",
+  "name": "pREST generator",
+  "short_name": "pREST Gen",
+  "description": "pREST static site generator",
   "icons": [
     {
       "src": "assets/icons/icon.png",
