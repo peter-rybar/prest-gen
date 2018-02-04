@@ -78,8 +78,6 @@ export function appshell(title: string, title1: string, sidebar: JsonMLs, conten
                 ...content
             ]
         ],
-        // snackbar
-        ["div#snackbar", "test"],
         ["script",
             `var sidebar = document.getElementById("sidebar");
             var overlay = document.getElementById("overlay");

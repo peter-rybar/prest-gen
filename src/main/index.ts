@@ -11,21 +11,24 @@ function HTML(file: string, jsonmls: JsonMLs, pretty = false): void {
     fs.writeFileSync(path, html);
 }
 
+
+const site = "Site";
+
 HTML("index.html",
-    page("page title",
-        appshell("aaaa", "index",
+    page(site,
+        appshell(site, "Index",
             sidebar(),
-            content("index", "name 0")
+            content("Index Title", "name 0")
         )
     ),
     true
 );
 
 HTML("views.html",
-    page("page title",
-        appshell("aaaa", "views",
+    page(site,
+        appshell(site, "Views",
             sidebar(),
-            content("views", "name 1")
+            content("Views Title", "name 1")
         )
     ),
     true
