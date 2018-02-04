@@ -1,4 +1,4 @@
-import { JsonMLs } from "./prest/jsonml/jsonml";
+import { JsonMLs } from "../prest/jsonml/jsonml";
 import { hello } from "./hello";
 
 export function content(title: string, name: string): JsonMLs {

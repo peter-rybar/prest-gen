@@ -1,4 +1,4 @@
-import { JsonMLs } from "./prest/jsonml/jsonml";
+import { JsonMLs } from "../prest/jsonml/jsonml";
 
 interface User {
     name: string;

@@ -1,4 +1,4 @@
-import { JsonMLs } from "./prest/jsonml/jsonml";
+import { JsonMLs } from "../prest/jsonml/jsonml";
 
 export function appshell(title: string,
                          title1: string,
