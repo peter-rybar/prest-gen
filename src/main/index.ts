@@ -20,8 +20,18 @@ const site = "Site Gen";
 HTML("index.html",
     page(site,
         appshell(site, "Index",
-            sidebar(),
+            sidebar("index.html"),
             content("Index Title", "name index")
+        )
+    ),
+    true
+);
+
+HTML("overview.html",
+    page(site,
+        appshell(site, "Overview",
+            sidebar("overview.html"),
+            content("Overview Title", "name overview")
         )
     ),
     true
@@ -30,7 +40,7 @@ HTML("index.html",
 HTML("views.html",
     page(site,
         appshell(site, "Views",
-            sidebar(),
+            sidebar("views.html"),
             content("Views Title", "name views")
         )
     ),
@@ -40,7 +50,7 @@ HTML("views.html",
 HTML("news.html",
     page(site,
         appshell(site, "News",
-            sidebar(),
+            sidebar("news.html"),
             content("News Title", "name news")
         )
     ),
@@ -50,7 +60,7 @@ HTML("news.html",
 HTML("settings.html",
     page(site,
         appshell(site, "Settings",
-            sidebar(),
+            sidebar("settings.html"),
             content("Settings Title", "name settings")
         )
     ),

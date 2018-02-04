@@ -11,14 +11,13 @@ interface Menu {
     icon: string;
 }
 
-export function sidebar(): JsonMLs {
+export function sidebar(active: string): JsonMLs {
     const user: User = { name: "Peter", avatar: "" };
-    const hash = "views";
     const menu: Menu[] = [
-        { url: "./", label: "Overview", icon: "i.fa.fa-users.fa-fw" },
-        { url: "./views.html", label: "Views", icon: "i.fa.fa-eye.fa-fw" },
-        { url: "./news.html", label: "News", icon: "i.fa.fa-bell.fa-fw" },
-        { url: "./settings.html", label: "Settings", icon: "i.fa.fa-cog.fa-fw" },
+        { url: "overview.html", label: "Overview", icon: "i.fa.fa-users.fa-fw" },
+        { url: "views.html", label: "Views", icon: "i.fa.fa-eye.fa-fw" },
+        { url: "news.html", label: "News", icon: "i.fa.fa-bell.fa-fw" },
+        { url: "settings.html", label: "Settings", icon: "i.fa.fa-cog.fa-fw" },
     ];
     const nbsp = "\u00a0 ";
     return [
@@ -35,7 +34,7 @@ export function sidebar(): JsonMLs {
                 ],
                 ["div.w3-col.s8.w3-bar",
                     ["span",
-                        ["a", { href: "#", style: "text-decoration: none;" }, "Welcome"],
+                        ["a", { href: "index.html", style: "text-decoration: none;" }, "Welcome"],
                         user.name ? ", " : " ",
                         ["strong", user.name]
                     ],
@@ -61,7 +60,7 @@ export function sidebar(): JsonMLs {
                         ["a.w3-bar-item.w3-button.w3-padding",
                             {
                                 href: m.url,
-                                classes: m.url === hash ? ["w3-blue"] : []
+                                classes: m.url === active ? ["w3-blue"] : []
                             },
                             [m.icon], nbsp, m.label
                         ]);
