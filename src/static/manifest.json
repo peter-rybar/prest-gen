@@ -4,12 +4,12 @@
   "description": "Wallet for DCT blockchain network",
   "icons": [
     {
-      "src": "assets/icons/ic-face.png",
+      "src": "assets/icons/icon.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "assets/icons/ic-face-large.png",
+      "src": "assets/icons/icon-large.png",
       "type": "image/png",
       "sizes": "144x144 256x256"
     }
