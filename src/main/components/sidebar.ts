@@ -11,7 +11,7 @@ interface Menu {
     icon: string;
 }
 
-export function sidebar(active: string): JsonMLs {
+export function sidebar(activeMenuItem: string): JsonMLs {
     const user: User = { name: "Peter", avatar: "" };
     const menu: Menu[] = [
         { url: "overview.html", label: "Overview", icon: "i.fa.fa-users.fa-fw" },
@@ -60,7 +60,7 @@ export function sidebar(active: string): JsonMLs {
                         ["a.w3-bar-item.w3-button.w3-padding",
                             {
                                 href: m.url,
-                                classes: m.url === active ? ["w3-blue"] : []
+                                classes: m.url === activeMenuItem ? ["w3-blue"] : []
                             },
                             [m.icon], nbsp, m.label
                         ]);

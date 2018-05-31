@@ -15,52 +15,57 @@ function HTML(file: string, jsonmls: JsonMLs, pretty = false): void {
 }
 
 
-const site = "Site Gen";
+const siteTitle = "Site Gen";
 
-HTML("index.html",
-    page(site,
-        appshell(site, "Index",
-            sidebar("index.html"),
+let file = "index.html";
+HTML(file,
+    page(siteTitle,
+        appshell(siteTitle, "Index",
+            sidebar(file),
             content("Index Title", "name index")
         )
     ),
     true
 );
 
-HTML("overview.html",
-    page(site,
-        appshell(site, "Overview",
-            sidebar("overview.html"),
+file = "overview.html";
+HTML(file,
+    page(siteTitle,
+        appshell(siteTitle, "Overview",
+            sidebar(file),
             content("Overview Title", "name overview")
         )
     ),
     true
 );
 
-HTML("views.html",
-    page(site,
-        appshell(site, "Views",
-            sidebar("views.html"),
+file = "views.html";
+HTML(file,
+    page(siteTitle,
+        appshell(siteTitle, "Views",
+            sidebar(file),
             content("Views Title", "name views")
         )
     ),
     true
 );
 
-HTML("news.html",
-    page(site,
-        appshell(site, "News",
-            sidebar("news.html"),
+file = "news.html";
+HTML(file,
+    page(siteTitle,
+        appshell(siteTitle, "News",
+            sidebar(file),
             content("News Title", "name news")
         )
     ),
     true
 );
 
-HTML("settings.html",
-    page(site,
-        appshell(site, "Settings",
-            sidebar("settings.html"),
+file = "settings.html";
+HTML(file,
+    page(siteTitle,
+        appshell(siteTitle, "Settings",
+            sidebar(file),
             content("Settings Title", "name settings")
         )
     ),

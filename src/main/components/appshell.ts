@@ -1,7 +1,7 @@
 import { JsonMLs } from "../prest/jsonml/jsonml";
 
 export function appshell(title: string,
-                         title1: string,
+                         subTitle: string,
                          sidebar: JsonMLs,
                          content: JsonMLs): JsonMLs {
     return [
@@ -18,7 +18,7 @@ export function appshell(title: string,
                 ["strong",
                     ["a", { href: "./", style: "text-decoration: none;" }, title]
                 ],
-                ["span", title1 ? ` - ${title1}` : ""],
+                ["span", subTitle ? ` - ${subTitle}` : ""],
             ],
             ["span.w3-bar-item.w3-right",
                 ["a",
