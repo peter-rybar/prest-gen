@@ -15,6 +15,8 @@ function HTML(file: string, jsonmls: JsonMLs, pretty = false): void {
 }
 
 
+const pretty = true;
+
 const siteTitle = "Site Gen";
 
 let file = "index.html";
@@ -25,7 +27,7 @@ HTML(file,
             content("Index Title", "name index")
         )
     ),
-    true
+    pretty
 );
 
 file = "overview.html";
@@ -36,7 +38,7 @@ HTML(file,
             content("Overview Title", "name overview")
         )
     ),
-    true
+    pretty
 );
 
 file = "views.html";
@@ -47,7 +49,7 @@ HTML(file,
             content("Views Title", "name views")
         )
     ),
-    true
+    pretty
 );
 
 file = "news.html";
@@ -58,7 +60,7 @@ HTML(file,
             content("News Title", "name news")
         )
     ),
-    true
+    pretty
 );
 
 file = "settings.html";
@@ -69,5 +71,5 @@ HTML(file,
             content("Settings Title", "name settings")
         )
     ),
-    true
+    pretty
 );
